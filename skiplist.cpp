@@ -27,7 +27,7 @@ public:
 	head_ = new listNode(1);
     }
 
-    V search(const K &key) {
+    V search(const K &key) const {
 	listNode *curr = head_;
 	uint listLevel = head_->forward_.size() - 1;
 	for (uint i = listLevel; i >= 1; --i) {
@@ -117,7 +117,7 @@ public:
     }
 
 private:
-    uint randomLevel(double prob) {
+    uint randomLevel(double prob) const {
 	uint ret = 1;
 	while (1.0 * rand() / RAND_MAX < prob)
 	    ++ret;
